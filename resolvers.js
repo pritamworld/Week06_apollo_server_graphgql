@@ -6,6 +6,11 @@ const resolvers = {
         getUsers: async () => {
             const users = await User.find();
             return users;
+        },
+        getUserByFirstName: async (_, { fname }) => {
+            const user = await User.find({ "firstname": fname }).select('firstname lastname email');
+            console.log(user);
+            return user;
         }
     },
     Mutation: {

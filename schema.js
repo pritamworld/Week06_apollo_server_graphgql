@@ -9,6 +9,7 @@ const typeDefs = gql `
     type Query {
         hello: String!
         getUsers: [User]
+        getUserByFirstName(fname: String!): [User]
     }
 
     type Mutation {
