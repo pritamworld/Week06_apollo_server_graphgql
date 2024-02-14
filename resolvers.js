@@ -3,13 +3,9 @@ const User = require('./models/User');
 const resolvers = {
     Query: {
         hello: () => 'Hello world!',
-        user: () => {
-            const user = {
-                firstname: 'Pritesh',
-                lastname: 'Patel',
-                email: 'p@p.com'
-            }
-            return user;
+        getUsers: async () => {
+            const users = await User.find();
+            return users;
         }
     },
     Mutation: {
