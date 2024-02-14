@@ -7,7 +7,11 @@ const { ApolloServer } = require('apollo-server-express');
 
 
 //TODO - Replace you Connection String here
-const mongodb_atlas_url = 'mongodb+srv://sa:pF5Z8ww9JtATIsp2@cluster0.7wn4nmp.mongodb.net/w2024_comp3133s?retryWrites=true&w=majority';
+const DB_USER = 'sa';
+const DB_USER_PASSWORD = 'pF5Z8ww9JtATIsp2';
+const DB_CLUSTER = 'cluster0.7wn4nmp.mongodb.net';
+const DB_NAME = 'w2024_comp3133s';
+const mongodb_atlas_url = `mongodb+srv://${DB_USER}:${DB_USER_PASSWORD}@${DB_CLUSTER}/${DB_NAME}?retryWrites=true&w=majority`;
 mongoose.connect(mongodb_atlas_url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
