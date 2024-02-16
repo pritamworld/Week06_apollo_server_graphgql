@@ -18,6 +18,11 @@ const resolvers = {
             const user = new User({ firstname, lastname, email });
             await user.save();
             return user;
+        },
+        createNewUser: async (_, { data }) => {
+            const user = new User(data);
+            await user.save();
+            return user;
         }
     }
 }
