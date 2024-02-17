@@ -1,5 +1,5 @@
 const express = require('express');
-const mongodb_connect = require('./models/db/mongodb');
+const mongodb_connect = require('./db/mongodb');
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 const mongoose = require('mongoose');
