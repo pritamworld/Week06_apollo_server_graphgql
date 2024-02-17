@@ -28,6 +28,8 @@ async function startServer() {
     await server.start();
     server.applyMiddleware({ app });
 
+    app.use('*', cors());
+    
     app.listen({ port: SERVER_PORT }, () =>
     console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
 );
